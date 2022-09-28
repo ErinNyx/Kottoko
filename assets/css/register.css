@@ -1,0 +1,48 @@
+#login {
+    position: relative;
+    left: 50%;
+    height: 55vh;
+    width: 55vh;
+    top: 0;
+    left: 0;
+    padding: .85vh;
+    border-radius: 2vh;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: var(--nav-back);
+    transform: translate(-50%);
+    
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+#login * {
+    width: 75%;
+    color: var(--nav-text-after);
+    background: var(--nav-back);
+    border: 0.5px solid white;
+    border-radius: 1vh;
+}
+
+.uAvatar {
+    height: 10vh;
+    width: 10vh!important;
+    border-radius: 50%!important;
+}
+
+#login input {
+    height: 8vh;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+#log-butt {
+    transition: 0.4s;
+}
+
+#log-butt:hover {
+    color: var(--hover-color);
+}

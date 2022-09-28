@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Noto+Serif+JP:wght@300&family=Quicksand&display=swap');
+@-webkit-keyframes fadeIn {
+    0% { 
+        opacity:0; 
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity:100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}
+
+* {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1em;
+    color: var(--text-col);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background-col);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 15vh;
+    text-align: center;
+    line-height: 15vh;
+    font-family: 'Barlow Condensed', sans-serif;
+    background: var(--background-col);
+    transition: 0.6s;
+    color: var(--nav-text-before);
+}
+
+nav:hover {
+    background: var(--nav-back);
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+nav:hover * {
+    color: var(--nav-text-after);
+}
+
+nav * {
+    position: relative;
+    margin: 1vh;
+    text-decoration: none !important;
+    transform: scaleX(0);
+}
+
+nav a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--nav-text-after);
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: 0.4s;
+}
+
+nav a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+jp {
+    font-family: 'Noto Serif JP', serif !important;
+    color: var(--nav-text-after);
+}
+
+a {
+    transition: 0.4s;
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+#theme {
+    position: fixed;
+    bottom: 2vh;
+    left: 2vh;
+}
+
+#theme, #theme * {
+    color: black!important;
+}
+
+::placeholder {
+    color: var(--nav-text-after);
+}
+
+form input:hover {
+    cursor: text;
+}
+
+#modal {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#pop {
+    position: relative;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%);
+    background: var(--nav-back);
+    color: var(--nav-text-after);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: .85vh;
+    height: 15vh;
+    width: 75vh;
+    border-radius: 1vh;
+}
+
+#pop * {
+    width: 75%;
+    text-align: center;
+    
+    color: var(--nav-text-after);
+}
+
+#modal * a:hover {
+    color: var(--hover-color)!important;
+}
+
+#modal * a {
+    cursor: pointer;
+}
+
+.help-tip {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    text-align: center;
+    background-color: #BCDBEA;
+    border-radius: 50%;
+    width: 24px!important;
+    height: 24px!important;
+    font-size: 14px;
+    line-height: 26px;
+    cursor: default;
+}
+
+.help-tip::before {
+    content:'?';
+    font-weight: bold;
+    color:#fff;
+}
+
+.help-tip p {
+    display: none;
+    text-align: left;
+    background-color: #1E2021;
+    padding: 20px;
+    width: 300px!important;
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    right: -4px;
+    color: #FFF;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.help-tip:hover p {
+    display:block;
+    transform-origin: 100% 0%;
+
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.help-tip p::before {
+    position: absolute;
+    content: '';
+    width:0;
+    height: 0;
+    border:6px solid transparent;
+    border-bottom-color:#1E2021;
+    right:10px;
+    top:-12px;
+}
+
+.help-tip p::after {
+    width:100%;
+    height:40px;
+    content:'';
+    position: absolute;
+    top:-40px;
+    left:0;
+}
+
+#login-butt:hover {
+    cursor: pointer!important;
+}
+
+#main-content {
+    position: absolute;
+    height: 80vh;
+    width: 100vw;
+    left: 0;
+    bottom: 0;
+}
+
+.textarea {
+    background: var(--nav-text-before);
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 1vh;
+    padding: 0.85vh;
+    overflow: hidden;
+    resize: both;
+}

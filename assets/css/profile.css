@@ -1,0 +1,49 @@
+#main-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#main-content div:not(#uInfo div) {
+    margin: 2vh;
+}
+
+#uInfo {
+    position: relative;
+    width: 25vh;
+    height: auto;
+    background: var(--nav-back);
+    color: var(--nav-text-after);
+    border-radius: 2vh;
+    padding: .85vh;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+#uInfo img {
+    height: 25vh;
+    width: 25vh;
+}
+
+#uInfo-Title {
+    text-align: center;
+}
+
+#pSection {
+    position: relative;
+    top: 0;
+    height: auto;
+    width: 50vw;
+    background: var(--nav-back);
+    color: var(--nav-text-after);
+    border-radius: 2vh;
+    padding: 1vh;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+#pSection div {
+    padding: .85vh;
+}
+
+#pSection div:nth-of-type(1) {
+    text-align: center;
+}
