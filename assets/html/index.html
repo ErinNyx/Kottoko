@@ -38,7 +38,7 @@
 </body>
 <script>
     /**
-     * Yes, this is dumb as f*** 
+     * Yes, this is dumb 
      * Yes, I am fully aware of how dumb this is
      * No, no matter what I did
      * I could not get this stupid for loop to work
@@ -46,16 +46,34 @@
      * I tried setting it to window.onload
      * I tried setting it to document.onload
      * I tried switching from a forEach loop to a normal for loop
-     * No matter what the f*** I did
+     * No matter what I did
      * This is the only stupid solution that works
      * So here it stays
+     * This code will check every ms, in an interval, if the page has loaded in the avatars yet so that a few
+     * For loops can function
      * */
-    function thisIsStupid() {
+    async function thisIsStupid() {
         for (var j = 0; j < document.querySelectorAll('.uAvatar').length; j++) {
             if (document.querySelectorAll('.uAvatar')[j].src == '') {
                 document.querySelectorAll('.uAvatar')[j].src = '/images/empty-avatar.jpg';
             }
         }
+
+        for (var i = 0; i < document.querySelectorAll('.bb-img').length; i++) {
+            var img = await createElement('img', null, 'bbimg' + i);
+            img.src = document.querySelectorAll('.bb-img')[i].innerHTML;
+            document.querySelectorAll('.bb-img')[i].innerHTML = '';
+
+            document.querySelectorAll('.bb-img')[i].appendChild(img);
+        }
+
+        for (var i = 0; i < document.querySelectorAll('.bb-style').length; i++) {
+            if (window.location.href.split('/')[3] == 'user') document.querySelectorAll('.bb-style')[i].innerHTML =
+                document.querySelectorAll('.bb-style')[i].innerHTML.replaceAll('<br>', '')
+            else document.querySelectorAll('.bb-style')[i].remove();
+        }
+
+        popUserImages();
     }
 
     var int = setInterval(() => {

@@ -1,0 +1,89 @@
+#settings-form {
+    position: relative;
+    top: 35%;
+    left: 50%;
+    min-height: 25vh;
+    max-height: 75vh;
+    height: auto;
+    width: 60vw;
+    transform: translate(-50%, -50%);
+    background: var(--nav-back);
+    padding: 1vh;
+    border-radius: 2vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+#settings-form * {
+    min-width: 75%;
+    max-width: 75%;
+    color: var(--nav-text-after);
+    background: var(--nav-back);
+    border: 0.5px solid white;
+    border-radius: 1vh;
+    height: 8vh;
+    margin-top: 1vh;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+#settings-form input::placeholder {
+    color: gray!important;
+}
+
+.textarea {
+    overflow: auto;
+    background: var(--nav-back);
+    display: inline-block;
+}
+
+#txt-input {
+    min-height: 18vh;
+    max-height: 28vh;
+    height: auto;
+}
+
+.textarea[contenteditable]:empty::before {
+    content: "Enter your text";
+    color: gray;
+}
+
+#settings-form button, #settings-form [type='submit'] {
+    min-width: 45%;
+    max-width: 45%;
+    margin-right: 50%;
+    margin-left: 50%;
+}
+
+#av-back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background:rgba(0, 0, 0, 0.5);
+    z-index: 10001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#avatar-form {
+    color: var(--nav-text-after);
+    position: relative;
+    display: grid;
+    gap: .5vh;
+    background: var(--nav-back);
+    padding: 1vh;
+    border-radius: 2vh;
+}
+
+#av-close {
+    position: relative;
+    top: 0;
+    right: 0;
+    color: white;
+    cursor: pointer;
+}

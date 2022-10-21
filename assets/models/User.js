@@ -8,13 +8,15 @@ const UserSchema = new mongoose.Schema({
     admin: { type: Boolean, required: true },
     auth: { type: Boolean, required: true },
     messages: { type: Array, required: true },
+    unread: { type: Array, required: true },
     notebook: { type: Array, required: true },
     lesson: { type: String, required: true },
     dictionary: { type: Array, required: true },
     chatrooms: { type: Array, required: true },
     profile: { type: String, required: true },
     pronouns: { type: String, required: true },
-    joined: { type: String, required: true }
+    joined: { type: String, required: true },
+    avatar: { type: String }
     //usertag, avatar, username, messages, admin, notebook, lesson, dictionary, chatrooms, profile, pronouns, joined
 }, { collection: 'users' });
 

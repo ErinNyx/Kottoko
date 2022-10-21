@@ -1,22 +1,5 @@
-var token;
-if(localStorage.getItem('TOKEN')) token = localStorage.getItem('TOKEN')
-else token = false;
-
-async function userdata() {
-    const data = await fetch("/api/get-user", {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            id: window.location.href.split('/')[4],
-            token
-        })
-    }).then((res) => res.json());
-    return data;
-}
-
-const user = await userdata();
-
-console.log(user);
+// Create Page
+const user = await userdata(window.location.href.split('/')[4]);
 
 var uInfoTop_children = [
     createElement('p', null, 'uInfo-Title', null, null, null, user.username),
@@ -25,7 +8,9 @@ var uInfoTop_children = [
 
 var uInfoBottom_children = [
     createElement('p', null, 'joined-on', null, null, null, 'Joined on '+user.joined),
-    createElement('p', null, 'pronouns', null, null, null, 'Pronouns: '+user.pronouns)
+    createElement('p', null, 'pronouns', null, null, null, 'Pronouns: '+user.pronouns),
+    createElement('p', null, 'msg', null, null, null, 'Message'),
+    createElement('p', null, 'block', null, null, null, 'Block')
 ];
 
 var uInfoTop = createElement('div', null, null, null, null, null, null, uInfoTop_children);
@@ -39,3 +24,10 @@ var pSection_children = [pSection_title, pSection_content];
 
 var userInfo = createElement('div', null, 'uInfo', null, '#main-content', null, null, uInfo_children);
 var profileSection = createElement('div', null, 'pSection', null, '#main-content', null, null, pSection_children);
+
+document.querySelector('#uInfoAvatar').value = user.usertag;
+
+document.getElementById('msg').onclick = () => {
+    localStorage.setItem('msg-to', user.usertag);
+    window.location.href = '/messages/'
+}

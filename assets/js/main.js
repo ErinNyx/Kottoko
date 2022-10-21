@@ -1,3 +1,4 @@
+// Loads main page
 var children = [];
 var about = '<jp>ようこそ！</jp>Welcome to Kottoko! This website is all about learning, whether that be grammar, Kanji, your Kana skills, or even ' + 
 'just communication. As a college student currently taking the course I understand how hard it can be to learn Japanese. This website will guide you through the Lessons ' +

@@ -9,7 +9,8 @@ const route = (path) => {
         'login': 'login.js login.css',
         'register': 'register.js register.css',
         'user': 'profile.js profile.css',
-        'messages': 'message.js message.css'
+        'messages': 'message.js message.css',
+        'settings': 'settings.js settings.css'
     }
 
     var req = path.split('/');
