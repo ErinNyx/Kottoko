@@ -32,7 +32,7 @@ const io = new Server(server);
 const ERR_MSG = 'Something went wrong, please contact the webmaster @ erinemrysnyx@gmail.com or send her a dm, user erinnyx';
 
 //geese
-mongoose.connect('mongodb+srv://erinn:Erin12374274Nyx!@cluster0.xrtqd7f.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect('MONGO DB URL HERE', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
